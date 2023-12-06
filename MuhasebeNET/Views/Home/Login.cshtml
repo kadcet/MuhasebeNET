@@ -1,0 +1,96 @@
+﻿@using MuhasebeNET.Domain.Entities;
+@model User_
+
+<head>
+
+	<meta charset="UTF-8">
+
+	<title>CodePen - Random Login Form</title>
+
+	<link rel="stylesheet" href="~/Login/css/style.css" />
+
+	<script src="js/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+
+	<div class="body"></div>
+	<div class="grad"></div>
+	<div class="header">
+		<div>Site<span>Random</span></div>
+	</div>
+	<br>
+    <form asp-controller="Login" asp-action="GetAllUser" method="post">
+		<div class="login">
+            <input type="text" id="usernameInput" name="usernameInput" placeholder="Kullanıcı Adı" asp-for="UserName" /><br>
+            <input type="text" id="passwordInput" name="passwordInput" placeholder="Şifre" asp-for="Password" /><br>
+			<button type="submit">Giriş</button>
+		</div>
+	</form>
+   
+
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        // $(document).ready(function () {
+        //     $('form').submit(function (e) {
+        //         e.preventDefault();
+
+        //         var formData = {
+        //             userName: $('input[name="UserName"]').val(),
+        //             password: $('input[name="Password"]').val(),
+        //             // Diğer alanları ekleyebilirsiniz
+        //         };
+
+        //         $.ajax({
+        //             type: 'POST',
+        //             url: 'https://localhost:7273/api/Login',
+        //             contentType: 'application/json',
+        //             data: JSON.stringify(formData),
+        //             success: function (response) {
+        //                 // Başarı durumu için işlemler
+        //             },
+        //             error: function (error) {
+        //                 // Hata durumu için işlemler
+        //             }
+        //         });
+        //     });
+        // });
+    </script>
+
+
+   @*  <script>
+        function submitForm() {
+            var username = document.getElementById('usernameInput').value;
+            var password = document.getElementById('passwordInput').value;
+            console.log(username + password);
+
+            var User_ = {
+                UserName: username,
+                Password: password
+            };
+
+            fetch('https://localhost:7273/api/Login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(User_)
+            })
+                .then(response => {
+                    // Cevap işlemleri burada yapılabilir
+                })
+                .catch(error => {
+                    // Hata işlemleri burada yapılabilir
+                });
+        }
+    </script> *@
+
+
+
+	<script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+
+</body>
+
+
